@@ -78,7 +78,7 @@ const movies = [
     },
     {
       title: "The Proposal",
-      plot: "Boos falls in love with their secretary",
+      plot: "Boss falls in love with their secretary",
       runtime: 108,
       cast: ["Sandra Bullock", "Ryan Reynolds"],
       genre: ["comedy", "romance", "drama"],
@@ -140,65 +140,71 @@ const movies = [
   function chooseGenre() {
     let chosenGenre = prompt("What movie genre are you feeling?").toLowerCase();
     const movieList = document.getElementById("movie-list");
+    movieList.innerHTML = ""; // Clear previous movie listings
     let foundMovies = false; // check if any movies found
-  
+
+    document.getElementById("hiddenContent").style.display = "block";
+    document.getElementById("genreButton").style.display = "none";
+
     // Check if the chosen genre exists in the movie's genre array
     for (const movie of movies) {
-      if (movie.genre.includes(chosenGenre)) {
-        foundMovies = true; // Set the flag to true since at least one movie was found
-        document.getElementById("genreResults").innerHTML =
-          "Here are your movie results for " +
-          chosenGenre.toUpperCase() +
-          " :<br><br>";
-  
-        // Create HTML elements to display the movie details:
-        const movieTitle = document.createElement("h2");
-        movieTitle.textContent = movie.title;
-  
-        const moviePlot = document.createElement("p");
-        moviePlot.textContent = `Summary: ${movie.plot}`;
-  
-        const movieRuntime = document.createElement("p");
-        movieRuntime.textContent = `Runtime: ${movie.runtime} minutes`;
-        movieRuntime.id = "tagline";
-  
-        const movieCast = document.createElement("p");
-        movieCast.textContent = `Cast: ${movie.cast.join(", ")}`;
-        movieCast.id = "tagline";
-  
-        const moviePoster = document.createElement("img");
-        moviePoster.className = "movie-poster";
-        moviePoster.src = movie.poster;
-        moviePoster.alt = `${movie.title} Poster`;
-  
-        // Create a container div for the movie details
-        const movieContainer = document.createElement("article");
-        movieContainer.className = "movie-details";
-        movieContainer.appendChild(moviePoster);
-        movieContainer.appendChild(movieTitle);
-        movieContainer.appendChild(moviePlot);
-        movieContainer.appendChild(movieRuntime);
-        movieContainer.appendChild(movieCast);
-  
-        // Append the movie container to the movie list
-        movieList.appendChild(movieContainer);
-      }
-  
-      if (foundMovies) {
+        if (movie.genre.includes(chosenGenre)) {
+            foundMovies = true; // Set the flag to true since at least one movie was found
+            document.getElementById("genreResults").innerHTML =
+                "Here are your movie results for " +
+                chosenGenre.toUpperCase() +
+                " :<br><br>";
+
+            // Create HTML elements to display the movie details:
+            const movieTitle = document.createElement("p");
+            movieTitle.textContent = movie.title;
+            movieTitle.className = "movie-title"; // Apply the correct class for styling
+
+            const moviePlot = document.createElement("p");
+            moviePlot.textContent = `Summary: ${movie.plot}`;
+            moviePlot.className = "movie-description"; // Apply the correct class for styling
+
+            const movieRuntime = document.createElement("p");
+            movieRuntime.textContent = `Runtime: ${movie.runtime} minutes`;
+            movieRuntime.className = "movie-runtime"; // Optional: styling for runtime
+
+            const movieCast = document.createElement("p");
+            movieCast.textContent = `Cast: ${movie.cast.join(", ")}`;
+            movieCast.className = "movie-cast"; // Optional: styling for cast
+
+            const moviePoster = document.createElement("img");
+            moviePoster.className = "movie-poster"; // Apply the poster class
+            moviePoster.src = movie.poster;
+            moviePoster.alt = `${movie.title} Poster`;
+
+            // Create a container div for the movie details
+            const movieContainer = document.createElement("div");
+            movieContainer.className = "movie-details";
+            movieContainer.appendChild(moviePoster);
+            movieContainer.appendChild(movieTitle);
+            movieContainer.appendChild(moviePlot);
+            movieContainer.appendChild(movieRuntime);
+            movieContainer.appendChild(movieCast);
+
+            // Append the movie container to the movie list
+            movieList.appendChild(movieContainer);
+        }
+    }
+
+    if (foundMovies) {
         document.getElementById("greet").style.display = "none"; // hide previous message
-        document.getElementById("genreButton").style.display = "none"; // hide previous button
         document.getElementById("tryAgainGenreButton").style.display = "none"; // hide previous button
         document.getElementById("advanceButton").style.display = "block"; // show next button
-      } else {
+    } else {
         document.getElementById("genreResults").innerHTML =
-          "No movies found for " +
-          chosenGenre.toUpperCase() +
-          ". Please try an alternate genre!";
+            "No movies found for " +
+            chosenGenre.toUpperCase() +
+            ". Please try an alternate genre!";
         document.getElementById("genreButton").style.display = "none";
         document.getElementById("tryAgainGenreButton").style.display = "block";
-      }
     }
-  }
+}
+
   
   // Function for 'Try another genre':
   function tryAgainGenre() {
@@ -256,7 +262,7 @@ const movies = [
   // Click to Finish button:
   
   finishButton.addEventListener("click", function () {
-    finishButton.textContent = "Thank you! Enjoy your Movie Night!"; // changes button text
+    finishButton.textContent = "Enjoy!"; // changes button text
     finishButton.style.background = "black"; // changes button colour
   });
   

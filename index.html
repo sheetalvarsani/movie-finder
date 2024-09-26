@@ -4,7 +4,6 @@
   </head>
   
   <body>
-  
     <section class="box">
   
       <h1>🍿Movie Night Planner🍿</h1>
@@ -15,27 +14,41 @@
   
       <!-- Step 2: Choose Genre -->
       <button id="genreButton" onclick="chooseGenre()">Choose your Genre</button>
-      <p id="genreResults"></p>
+      
   
-      <section id="movie-list"></section>
+      <!-- Section to be hidden initially -->
+
+      <div id="hiddenContent">
+        <p id="genreResults"></p>
+        <section id="movie-list">
+          <div class="movie-details">
+            <img src="poster.jpg" alt="Movie Poster" class="movie-poster">
+            <p class="movie-title">Movie Title</p>
+            <p class="movie-description">Movie Description</p>
+          </div>
+        </section>
+        <button id="tryAgainGenreButton" onclick="tryAgainGenre()">Try another Genre</button>
   
-      <button id="tryAgainGenreButton" onclick="tryAgainGenre()">Try another Genre</button>
+        <!-- Step 3: Movie options viewed so continue -->
+        <button id="advanceButton" onclick="advance()">Next Question</button>
   
-      <!-- Step 3: Movie options viewed so continue -->
+        <!-- Step 4: Snacks required? -->
+        <button id="snackButton" onclick="needSnack()">Feeling snacky?</button>
+        <p id="snackResults"></p>
   
-      <button id="advanceButton" onclick="advance()">Next Question</button>
+        <!-- Step 5: Sweet or Salty (optional) -->
+        <button id="sweetOrSaltyButton" onclick="snackOptions()">Sweet Or Salty?</button>
+        <p id="sweetOrSalty"></p>
   
-      <!-- Step 4: Snacks required? -->
-      <button id="snackButton" onclick="needSnack()">Feeling snacky?</button>
-      <p id="snackResults"></p>
+        <!-- Click to Finish -->
+        <button id="finishButton">Click to Finish</button>
+        <p id="finish"></p>
+      </div>
+      </div>
+      
+        
   
-      <!-- Step 5: Sweet or Salty (optional) -->
-      <button id="sweetOrSaltyButton" onclick="snackOptions()">Sweet Or Salty?</button>
-      <p id="sweetOrSalty"></p>
-  
-      <!-- Click to Finish -->
-      <button id="finishButton">Click to Finish</button>
-      <p id="finish"></p>
+
   
       <!-- Reset -->
       <button id="resetButton" onclick="reset()">Start Again</button>
@@ -44,5 +57,6 @@
   
     <script src="script.js"></script>
   </body>
+  
   
   </html>

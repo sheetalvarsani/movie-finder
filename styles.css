@@ -5,238 +5,169 @@ body {
   justify-content: center;
   align-items: center;
   background: #eaaa00;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 .box {
+  display: flex;
+  flex-direction: column;  /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
   width: 50%;
   padding: 50px;
   margin: 50px;
   border: 1px solid #013220;
   background: white;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+  min-height: 80vh; /* Optional: Give it some height to center content properly */
 }
 
+/* Headings and text */
 h1 {
   font-family: Garamond, serif;
-  font-size: 2rem;
-  color: Black;
-  justify-content: center;
-  align-self: center;
+  font-size: 1.8rem;
+  color: black;
   text-align: center;
-}
-
-h2 {
-  font-family: Garamond, serif;
-  font-size: 1.5rem;
-  color: Black;
-  justify-content: center;
-  align-self: center;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 p {
   font-family: Lora, serif;
-  padding: 1px;
-  margin: 20;
-  justify-content: center;
-  align-self: center;
   text-align: center;
   font-size: 1rem;
+  margin: 10px 0;
+  padding: 0 20px;
 }
 
+/* Buttons */
 button {
+  font-family: Lora, serif;
   cursor: pointer;
-}
-
-#tagline {
-  font-family: Garamond, serif;
-
-  justify-content: center;
-  align-self: center;
-  text-align: center;
-  font-size: 1rem;
-}
-
-#startButton {
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
+  padding: 12px 20px;
+  margin: 10px auto;
   background: #013220;
   border-radius: 5px;
   border: 0;
   color: white;
-  align-self: center;
   font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  align-self: center;
 }
 
-#startButton:hover {
+button:hover {
   background: #ab7d00;
   color: black;
 }
 
-#genreButton {
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
-  background: #013220;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  align-self: center;
-  font-size: 1rem;
+#hiddenContent {
   display: none;
 }
 
-#genreButton:hover {
-  background: #ab7d00;
-  color: black;
-}
 
-#tryAgainGenreButton {
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
-  background: #013220;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  align-self: center;
-  font-size: 1rem;
+/* Hide buttons initially */
+#genreButton, #tryAgainGenreButton, #advanceButton,
+#snackButton, #sweetOrSaltyButton, #finishButton, #resetButton {
   display: none;
-}
-
-#tryAgainGenreButton:hover {
-  background: #ab7d00;
-  color: black;
-}
-
-#advanceButton {
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
-  background: #013220;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  align-self: center;
-  font-size: 1rem;
-  display: none;
-}
-
-#advanceButton:hover {
-  background: #ab7d00;
-  color: black;
-}
-
-#snackButton {
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
-  background: #013220;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  align-self: center;
-  font-size: 1rem;
-  display: none;
-}
-
-#snackButton:hover {
-  background: #ab7d00;
-  color: black;
-}
-
-#sweetOrSaltyButton {
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
-  background: #013220;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  align-self: center;
-  font-size: 1rem;
-  display: none;
-}
-
-#sweetOrSaltyButton:hover {
-  background: #ab7d00;
-  color: black;
-}
-
-#finishButton {
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
-  background: #013220;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  align-self: center;
-  font-size: 1rem;
-  display: none;
-}
-
-#finishButton:hover {
-  background: #ab7d00;
-}
-
-#resetButton {
-  display: none;
-  font-family: Lora, serif;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 20px;
-  background: #013220;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  align-self: center;
-  font-size: 1rem;
-}
-
-#resetButton:hover {
-  background: #ab7d00;
-  color: black;
-}
-
-.user-name {
-  text-transform: capitalize;
 }
 
 #movie-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.movie-details {
-  flex: 0 0 45%;
-  border: 1px solid black;
-  text-align: center;
-  margin: 13px;
+.movie-details{
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 15px auto;
+  padding: 10px 15px;
+  width: 30%;
+  flex: 0 0 80%;
 }
 
+/* Styling for movie poster */
 .movie-poster {
   width: 200px;
   height: 200px;
   object-fit: cover;
   text-align: center;
-  padding-top: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  
+}
+
+/* Styling for movie title */
+.movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Styling for movie description */
+.movie-description {
+  font-size: 1rem;
+  color: #555; /* You can use a lighter color to differentiate */
+  margin-bottom: 10px;
+}
+
+/* Optional: Styling for runtime and cast */
+.movie-runtime, .movie-cast {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+
+
+@media (min-width: 768px) {
+  .box {
+    width: 70%;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    max-width: 250px;
+  }
+
+  .movie-details {
+    flex: 0 0 45%;
+    margin: 10px;
+  }
+
+
+}
+
+@media (min-width: 1024px) {
+  .box {
+    width: 60%;
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    max-width: 200px;
+  }
+
+  .movie-details {
+    flex: 0 0 25%;
+    margin: 15px;
+  }
+}
+#sweetorsalty {
+  margin-bottom: 40px;
 }
