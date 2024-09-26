@@ -143,7 +143,7 @@ const movies = [
     movieList.innerHTML = ""; // Clear previous movie listings
     let foundMovies = false; // check if any movies found
 
-    document.getElementById("hiddenContent").style.display = "block";
+    document.getElementById("hiddenMovieContent").style.display = "block";
     document.getElementById("genreButton").style.display = "none";
 
     // Check if the chosen genre exists in the movie's genre array
@@ -214,12 +214,18 @@ const movies = [
   // Step 3: Movie Options viewed so continue: advanceButton:
   
   function advance() {
-    document.getElementById("genreResults").innerHTML = ""; // clear movie recommendations
-    document.getElementById("advanceButton").style.display = "none"; // hide previous button
-    document.getElementById("snackButton").style.display = "block"; // show next button
+    document.getElementById("genreResults").innerHTML = ""; // Clear movie recommendations
+    document.getElementById("advanceButton").style.display = "none"; // Hide 'Next' button
   
-    const movieList = document.getElementById("movie-list"); // hide movie recommendations
-    movieList.innerHTML = " ";
+    const movieList = document.getElementById("movie-list"); // Clear movie list
+    movieList.innerHTML = "";
+  
+    // Hide the content from Step 2 and Step 3 (hiddenContent section)
+    document.getElementById("hiddenMovieContent").style.display = "none";
+  
+    // Show the Snack-related content (hiddenSnackContent section)
+    document.getElementById("hiddenSnackContent").style.display = "block";
+    document.getElementById("snackButton").style.display = "block";
   }
   
   // Step 4: Ask if they want a movie snack recommendation:
@@ -277,7 +283,6 @@ const movies = [
     document.getElementById("snackButton").style.display = "none";
     document.getElementById("sweetOrSaltyButton").style.display = "none";
     document.getElementById("finishButton").style.display = "none";
-    document.getElementById("resetButton").style.display = "none";
   
     // Clear displayed content
     document.getElementById("greet").innerHTML = "";

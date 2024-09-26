@@ -1,62 +1,62 @@
-<head>
-    <link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Movie Night Planner</title>
-  </head>
-  
-  <body>
-    <section class="box">
-  
-      <h1>🍿Movie Night Planner🍿</h1>
-  
-      <!-- Step 1: Let's begin -->
-      <button id="startButton" onclick="greeting()">Let's begin!</button>
-      <p id="greet"></p>
-  
-      <!-- Step 2: Choose Genre -->
-      <button id="genreButton" onclick="chooseGenre()">Choose your Genre</button>
-      
-  
-      <!-- Section to be hidden initially -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
 
-      <div id="hiddenContent">
-        <p id="genreResults"></p>
-        <section id="movie-list">
-          <div class="movie-details">
-            <img src="poster.jpg" alt="Movie Poster" class="movie-poster">
-            <p class="movie-title">Movie Title</p>
-            <p class="movie-description">Movie Description</p>
-          </div>
-        </section>
-        <button id="tryAgainGenreButton" onclick="tryAgainGenre()">Try another Genre</button>
-  
-        <!-- Step 3: Movie options viewed so continue -->
-        <button id="advanceButton" onclick="advance()">Next Question</button>
-  
-        <!-- Step 4: Snacks required? -->
-        <button id="snackButton" onclick="needSnack()">Feeling snacky?</button>
-        <p id="snackResults"></p>
-  
-        <!-- Step 5: Sweet or Salty (optional) -->
-        <button id="sweetOrSaltyButton" onclick="snackOptions()">Sweet Or Salty?</button>
-        <p id="sweetOrSalty"></p>
-  
-        <!-- Click to Finish -->
-        <button id="finishButton">Click to Finish</button>
-        <p id="finish"></p>
-      </div>
-      </div>
-      
-        
-  
 
-  
-      <!-- Reset -->
-      <button id="resetButton" onclick="reset()">Start Again</button>
-  
-    </section>
-  
-    <script src="script.js"></script>
-  </body>
-  
-  
-  </html>
+<body>
+  <section class="box">
+    <h1>🍿Movie Night Planner🍿</h1>
+
+    <!-- Step 1: Let's begin -->
+    <button id="startButton" onclick="greeting()">Let's begin!</button>
+    <p id="greet"></p>
+
+    <!-- Step 2: Choose Genre -->
+    <button id="genreButton" onclick="chooseGenre()">Choose your Genre</button>
+
+    <!-- Section for Genre and Movie List (Hidden initially) -->
+    <div id="hiddenMovieContent">
+      <p id="genreResults"></p>
+      <section id="movie-list">
+        <div class="movie-details">
+          <img src="poster.jpg" alt="Movie Poster" class="movie-poster">
+          <p class="movie-title">Movie Title</p>
+          <p class="movie-description">Movie Description</p>
+        </div>
+      </section>
+      <button id="tryAgainGenreButton" onclick="tryAgainGenre()">Try another Genre</button>
+
+      <!-- Step 3: Movie options viewed, continue to snacks -->
+      <button id="advanceButton" onclick="advance()">Next Question</button>
+    </div>
+
+    <!-- Separate Section for Snacks (Hidden initially) -->
+    <div id="hiddenSnackContent">
+      <!-- Step 4: Snacks required? -->
+      <button id="snackButton" onclick="needSnack()">Feeling snacky?</button>
+      <p id="snackResults"></p>
+
+      <!-- Step 5: Sweet or Salty (optional) -->
+      <button id="sweetOrSaltyButton" onclick="snackOptions()">Sweet Or Salty?</button>
+      <p class="sweet-salty" id="sweetOrSalty"></p>
+
+      <!-- Click to Finish -->
+      <button id="finishButton">Click to Finish</button>
+      <p id="finish"></p>
+    </div>
+
+    <!-- Reset -->
+    <button id="resetButton" onclick="reset()">Reset</button>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
