@@ -1,0 +1,48 @@
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Night Planner</title>
+  </head>
+  
+  <body>
+  
+    <section class="box">
+  
+      <h1>Movie Night Planner</h1>
+  
+      <!-- Step 1: Let's begin -->
+      <button id="startButton" onclick="greeting()">Let's begin!</button>
+      <p id="greet"></p>
+  
+      <!-- Step 2: Choose Genre -->
+      <button id="genreButton" onclick="chooseGenre()">Choose your Genre</button>
+      <p id="genreResults"></p>
+  
+      <section id="movie-list"></section>
+  
+      <button id="tryAgainGenreButton" onclick="tryAgainGenre()">Try another Genre</button>
+  
+      <!-- Step 3: Movie options viewed so continue -->
+  
+      <button id="advanceButton" onclick="advance()">Next Question</button>
+  
+      <!-- Step 4: Snacks required? -->
+      <button id="snackButton" onclick="needSnack()">Feeling snacky?</button>
+      <p id="snackResults"></p>
+  
+      <!-- Step 5: Sweet or Salty (optional) -->
+      <button id="sweetOrSaltyButton" onclick="snackOptions()">Sweet Or Salty?</button>
+      <p id="sweetOrSalty"></p>
+  
+      <!-- Click to Finish -->
+      <button id="finishButton">Click to Finish</button>
+      <p id="finish"></p>
+  
+      <!-- Reset -->
+      <button id="resetButton" onclick="reset()">Start Again</button>
+  
+    </section>
+  
+    <script src="script.js"></script>
+  </body>
+  
+  </html>
