@@ -96,11 +96,15 @@ const movies = [
         genre: ["animation", "adventure", "comedy"],
         poster: "https://lumiere-a.akamaihd.net/v1/images/p_mulan_20529_83d3893a.jpeg?region=0%2C0%2C540%2C810",
     },
+    {
+        title: "Knives Out",
+        plot: "A family reunion goes south when a mystery writer is found dead",
+        runtime: 130,
+        cast: ["Daniel Craig", "Chris Evans", "Ana de Armas"],
+        genre: ["mystery"],
+        poster: "https://www.julienjamar.com/wp-content/uploads/2020/03/Knives-Out-Promo.jpg",
+    },
 ];
-
-console.log(`There are ${movies.length} movies in the database`);
-
-alert("Welcome to the Movie Night Planner! Click OK to get started 📽 ");
 
 let userName = "";
 
@@ -112,15 +116,24 @@ function capitaliseName(name) {
 function greeting() {
     userName = prompt("What is your name?");
     userName = capitaliseName(userName);
-    if (userName == null || userName == "") {
-        output = "Please try again!";
+
+    if (!userName) {
+        output = "Please enter a valid name!";
+        document.getElementById("greet").innerHTML = output;
+        return;
     } else {
         output = `Hello <span class="user-name">${userName}</span>! Let's plan your Movie Night!`;
     }
+
+    document.getElementById("greet").innerHTML = output;
     document.getElementById("startButton").style.display = "none";
     document.getElementById("genreButton").style.display = "block";
     document.getElementById("resetButton").style.display = "block";
-    document.getElementById("greet").innerHTML = output;
+
+    const messages = document.getElementsByClassName("message");
+    for (let i = 0; i < messages.length; i++) {
+        messages[i].style.display = "block";
+    }
 }
 
 function chooseGenre() {
@@ -132,13 +145,14 @@ function chooseGenre() {
     document.getElementById("hiddenMovieContent").style.display = "block";
     document.getElementById("genreButton").style.display = "none";
 
+    document.getElementById("genreResults").innerHTML =
+        `<span class="user-name">${userName}</span>'s results for ` +
+        chosenGenre.toUpperCase() +
+        " movies :<br><br>";
+
     for (const movie of movies) {
         if (movie.genre.includes(chosenGenre)) {
             foundMovies = true;
-            document.getElementById("genreResults").innerHTML =
-                `<span class="user-name">${userName}</span>'s results for ` +
-                chosenGenre.toUpperCase() +
-                " movies :<br><br>";
 
             const movieTitle = document.createElement("p");
             movieTitle.textContent = movie.title;
@@ -181,7 +195,7 @@ function chooseGenre() {
         document.getElementById("genreResults").innerHTML =
             "No movies found for " +
             chosenGenre.toUpperCase() +
-            ". Please try an alternate genre!";
+            ". Please see options below:<br><br>Adventure | Action | Drama | Fantasy | Romance | Thriller | Horror | Musical | Comedy | Mystery | Animation";
         document.getElementById("genreButton").style.display = "none";
         document.getElementById("tryAgainGenreButton").style.display = "block";
     }
@@ -197,17 +211,21 @@ document.getElementById("finishButton").addEventListener("click", function () {
 });
 
 function reset() {
-  document.getElementById("startButton").style.display = "block";
-  document.getElementById("genreButton").style.display = "none";
-  document.getElementById("tryAgainGenreButton").style.display = "none";
-  document.getElementById("finishButton").style.display = "none";
+    document.getElementById("startButton").style.display = "block";
+    document.getElementById("genreButton").style.display = "none";
+    document.getElementById("tryAgainGenreButton").style.display = "none";
+    document.getElementById("finishButton").style.display = "none";
 
-  document.getElementById("greet").innerHTML = "";
-  document.getElementById("genreResults").innerHTML = "";
-  document.getElementById("movie-list").innerHTML = "";
+    document.getElementById("greet").innerHTML = "";
+    document.getElementById("genreResults").innerHTML = "";
+    document.getElementById("movie-list").innerHTML = "";
 
-  userName = ""; // Reset the username
+    const messages = document.getElementsByClassName("message");
+    for (let i = 0; i < messages.length; i++) {
+        messages[i].style.display = "none";
+    }
+
+    userName = "";
 }
 
 document.getElementById("resetButton").addEventListener("click", reset);
-
