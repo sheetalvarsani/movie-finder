@@ -16,11 +16,11 @@ body {
     align-items: center;
     width: 90%;
     /* padding: 0 50px; */
-    /* margin: 50px; */
+    margin: 2rem auto;
     background: #711324;
     border-radius: 10px;
-    min-height: 90vh;
     position: relative;
+    min-height: 80vh;
 }
 
 h1 {
@@ -30,6 +30,7 @@ h1 {
     text-shadow: 2px 2px 5px #ab7d00;
     text-align: center;
     margin-bottom: 20px;
+    padding-top: 3rem;
 }
 
 p {
@@ -44,14 +45,13 @@ p {
     text-align: center;
     margin: 20px 0;
     color: whitesmoke;
-    font-weight: 600;
 }
 
 .button {
     font-family: Lora, serif;
     cursor: pointer;
     padding: 12px 20px;
-    margin: 30px auto;
+    margin: 10px;
     background: black;
     border-radius: 5px;
     border: none;
@@ -73,10 +73,7 @@ button:hover {
     display: none;
 }
 
-#genreButton,
-#tryAgainGenreButton,
-#advanceButton,
-#finishButton {
+#genreButton {
     display: none;
 }
 
@@ -91,7 +88,7 @@ button:hover {
     background: transparent;
     width: 40px;
     border: none;
-    outline: none; 
+    outline: none;
     box-shadow: none;
     transition: transform 0.2s ease;
 
@@ -106,8 +103,15 @@ button:hover {
         outline: none;
         cursor: pointer;
         transform: scale(0.9);
-        
     }
+}
+
+#tryAgainGenreButton {
+    margin-top: 20px;
+}
+
+#finishButton {
+    margin-bottom: 30px;
 }
 
 #movie-list {
@@ -158,16 +162,19 @@ button:hover {
     margin-bottom: 5px;
 }
 
-.sweet-salty {
-    line-height: 2rem;
-    margin-bottom: 40px;
-    font-size: 0.8rem;
+.movie-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
 }
+
+
+
 
 @media (min-width: 768px) {
     .box {
         width: 70%;
-        padding: 30px;
         min-height: 80vh;
     }
     h1 {
@@ -180,17 +187,29 @@ button:hover {
         flex: 0 0 45%;
         margin: 10px;
     }
-    .sweet-salty {
-        font-size: 0.9rem;
+    .movie-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem;
+    }
+    
+    #tryAgainGenreButton {
+        margin: 0;
+    }
+    
+    #finishButton {
+        margin: 0;
     }
 }
 
 @media (min-width: 1024px) {
     .box {
-        min-height: 80vh;
         width: 60%;
-        padding: 40px;
+        min-height: 80vh;
     }
+
     h1 {
         font-size: 3rem;
         margin-bottom: 2rem;
@@ -203,7 +222,19 @@ button:hover {
         flex: 0 0 25%;
         margin: 15px;
     }
-    .sweet-salty {
-        font-size: 1.2rem;
+    .movie-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem;
+    }
+    
+    #tryAgainGenreButton {
+        margin: 0;
+    }
+    
+    #finishButton {
+        margin: 0;
     }
 }

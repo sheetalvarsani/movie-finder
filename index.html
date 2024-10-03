@@ -23,7 +23,7 @@
             <button class="button" id="startButton" onclick="greeting()">
                 Let's begin!
             </button>
-            <p class= "message" id="greet"></p>
+            <p class="message" id="greet"></p>
 
             <!-- Step 2: Choose Genre -->
             <button class="button" id="genreButton" onclick="chooseGenre()">
@@ -44,43 +44,18 @@
                         <p class="movie-description">Movie Description</p>
                     </div>
                 </section>
-                <button
-                    class="button"
-                    id="tryAgainGenreButton"
-                    onclick="tryAgainGenre()"
-                >
-                    Try another Genre
-                </button>
-
-                <!-- Step 3: Movie options viewed, continue to snacks -->
-                <button class="button" id="advanceButton" onclick="advance()">
-                    Next Question
-                </button>
-            </div>
-
-            <!-- Separate Section for Snacks (Hidden initially) -->
-            <div id="hiddenSnackContent">
-                <!-- Step 4: Snacks required? -->
-                <button class="button" id="snackButton" onclick="needSnack()">
-                    Feeling snacky?
-                </button>
-                <p id="snackResults"></p>
-
-                <!-- Step 5: Sweet or Salty (optional) -->
-                <button
-                    class="button"
-                    id="sweetOrSaltyButton"
-                    onclick="snackOptions()"
-                >
-                    Sweet Or Salty?
-                </button>
-                <p class="sweet-salty" id="sweetOrSalty"></p>
-
-                <!-- Click to Finish -->
-                <button class="button" id="finishButton">
-                    Click to Finish
-                </button>
-                <p id="finish"></p>
+                <section class="movie-buttons">
+                    <button
+                        class="button"
+                        id="tryAgainGenreButton"
+                        onclick="tryAgainGenre()"
+                    >
+                        Try another Genre
+                    </button>
+                    <button class="button" id="finishButton">
+                        Click to Finish
+                    </button>
+                </section>
             </div>
 
             <!-- Reset -->
