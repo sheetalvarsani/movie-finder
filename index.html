@@ -27,7 +27,7 @@
 
             <!-- Step 2: Choose Genre -->
             <button class="button" id="genreButton" onclick="chooseGenre()">
-                Choose your Genre
+                Choose Genre
             </button>
 
             <!-- Section for Genre and Movie List (Hidden initially) -->
@@ -47,10 +47,10 @@
                 <section class="movie-buttons">
                     <button
                         class="button"
-                        id="tryAgainGenreButton"
-                        onclick="tryAgainGenre()"
+                        id="chooseAgainButton"
+                        onclick="chooseGenre()"
                     >
-                        Try another Genre
+                        Choose Again
                     </button>
                     <button class="button" id="finishButton">
                         Click to Finish
@@ -59,6 +59,7 @@
             </div>
 
             <!-- Reset -->
+            <p id="finalMessage">Enjoy your movie night!</p>
             <button id="resetButton" onclick="reset()">
                 <img src="images/reset.png" alt="Reset" />
             </button>

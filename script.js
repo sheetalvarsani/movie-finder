@@ -33,7 +33,7 @@ const movies = [
         poster: "https://cdn.vox-cdn.com/thumbor/FFyjm4Fe5CaTlRc5YpUQQkPBztI=/0x0:1920x1080/1400x1050/filters:focal(833x133:1139x439):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/52810897/splitcover.0.png",
     },
     {
-        title: "Mission:Impossible-Rogue Nation",
+        title: "Mission: Impossible - Rogue Nation",
         plot: "The same as the other Mission Impossible films, but with more Simon Pegg",
         runtime: 131,
         cast: ["Tom Cruise", "Simon Pegg", "Rebecca Ferguson"],
@@ -130,6 +130,7 @@ function greeting() {
     document.getElementById("genreButton").style.display = "block";
     document.getElementById("resetButton").style.display = "block";
 
+
     const messages = document.getElementsByClassName("message");
     for (let i = 0; i < messages.length; i++) {
         messages[i].style.display = "block";
@@ -189,7 +190,7 @@ function chooseGenre() {
 
     if (foundMovies) {
         document.getElementById("greet").style.display = "none";
-        document.getElementById("tryAgainGenreButton").style.display = "block";
+        document.getElementById("chooseAgainButton").style.display = "block";
         document.getElementById("finishButton").style.display = "block";
     } else {
         document.getElementById("genreResults").innerHTML =
@@ -197,28 +198,38 @@ function chooseGenre() {
             chosenGenre.toUpperCase() +
             ". Please see options below:<br><br>Adventure | Action | Drama | Fantasy | Romance | Thriller | Horror | Musical | Comedy | Mystery | Animation";
         document.getElementById("genreButton").style.display = "none";
-        document.getElementById("tryAgainGenreButton").style.display = "block";
+        document.getElementById("chooseAgainButton").style.display = "block";
     }
 }
 
-function tryAgainGenre() {
-    chooseGenre();
-}
 
 document.getElementById("finishButton").addEventListener("click", function () {
-    this.textContent = "Enjoy!";
-    this.style.background = "black";
+  document.getElementById("finalMessage").style.display = "block";
+
+  document.getElementById("greet").style.display = "none";
+  document.getElementById("hiddenMovieContent").style.display = "none";
+  document.getElementById("chooseAgainButton").style.display = "none";
+  document.getElementById("finishButton").style.display = "none";
+  document.getElementById("genreResults").style.display = "none";
+  document.getElementById("movie-list").style.display = "none";
+
 });
 
 function reset() {
     document.getElementById("startButton").style.display = "block";
     document.getElementById("genreButton").style.display = "none";
-    document.getElementById("tryAgainGenreButton").style.display = "none";
+    document.getElementById("chooseAgainButton").style.display = "none";
     document.getElementById("finishButton").style.display = "none";
+   
 
     document.getElementById("greet").innerHTML = "";
     document.getElementById("genreResults").innerHTML = "";
     document.getElementById("movie-list").innerHTML = "";
+   
+    document.getElementById("finalMessage").style.display = "none";
+    document.getElementById("finalMessage").innerHTML = "";
+  
+
 
     const messages = document.getElementsByClassName("message");
     for (let i = 0; i < messages.length; i++) {

@@ -108,7 +108,7 @@ button:hover {
     }
 }
 
-#tryAgainGenreButton {
+#chooseAgainButton {
     margin-top: 20px;
 }
 
@@ -116,6 +116,9 @@ button:hover {
     margin-bottom: 30px;
 }
 
+#finalMessage {
+    display: none;
+}
 #movie-list {
     display: flex;
     flex-wrap: wrap;
@@ -149,19 +152,22 @@ button:hover {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 5px;
+    padding: 0 40px;
 }
 
 .movie-description {
     font-size: 1rem;
     color: black;
     margin-bottom: 10px;
+    padding: 0 20px;
 }
 
 .movie-runtime,
 .movie-cast {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: black;
     margin-bottom: 5px;
+    padding: 0 40px;
 }
 
 .movie-buttons {
@@ -199,7 +205,8 @@ button:hover {
         margin-bottom: 4rem;
     }
     
-    #tryAgainGenreButton {
+    #chooseAgainButton {
+        display: none;
         margin: 0;
     }
     
@@ -235,8 +242,9 @@ button:hover {
         margin-bottom: 5rem;
     }
     
-    #tryAgainGenreButton {
+    #chooseAgainButton {
         margin: 0;
+        display: none;
     }
     
     #finishButton {
