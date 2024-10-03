@@ -228,42 +228,6 @@ const movies = [
     document.getElementById("snackButton").style.display = "block";
   }
   
-  // Step 4: Ask if they want a movie snack recommendation:
-  // If yes, user recieves message to click next button
-  // If no, this is the end of the web app and user receives final message
-  
-  function needSnack() {
-    const yesSnack = confirm("Would you like some snack ideas?");
-    if (yesSnack) {
-      document.getElementById("snackButton").style.display = "none"; // hide previous button
-      document.getElementById("sweetOrSaltyButton").style.display = "block"; // show next button
-    } else {
-      document.getElementById("snackButton").style.display = "none"; // hide previous button
-      document.getElementById("finishButton").style.display = "block"; // show next button
-    }
-  }
-  
-  // Step 5: Sweet or Salty nsack suggestions (optional):
-  
-  function snackOptions() {
-    let finalSnack;
-    const sweetOrSalty = prompt("sweet or salty").toLowerCase();
-    // if response is sweet:
-    if (sweetOrSalty === "sweet") {
-      finalSnack =
-        "How about one (or all!) of these:<br><br>Caramel Popcorn 🍿<br>Skittles 🌈<br>Chocolate Chip Cookies 🍪";
-      // if response is salty:a
-    } else if (sweetOrSalty === "salty") {
-      finalSnack =
-        "How about one (or all!) of these:<br><br>Butter Popcorn🍿<br>Cheesy Nachos with Spicy Salsa🧀🌶️<br>Pretzels🥨";
-      // if response is anything else:
-    } else {
-      finalSnack = "Please try again!";
-    }
-    document.getElementById("sweetOrSalty").innerHTML = finalSnack;
-    document.getElementById("sweetOrSaltyButton").style.display = "none"; // hide previous button
-    document.getElementById("finishButton").style.display = "block"; // show finish button
-  }
   
   // Click to Finish button:
   

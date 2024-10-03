@@ -59,16 +59,13 @@ button:hover {
     color: black;
 }
 
-#hiddenMovieContent,
-#hiddenSnackContent {
+#hiddenMovieContent {
     display: none;
 }
 
 #genreButton,
 #tryAgainGenreButton,
 #advanceButton,
-#snackButton,
-#sweetOrSaltyButton,
 #finishButton {
     display: none;
 }
