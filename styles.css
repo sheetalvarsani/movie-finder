@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #eaaa00;
+    background: black;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -14,20 +14,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    padding: 50px;
-    margin: 50px;
-    border: 1px solid #013220;
-    background: white;
+    width: 90%;
+    /* padding: 0 50px; */
+    /* margin: 50px; */
+    background: #711324;
     border-radius: 10px;
-    min-height: 80vh;
+    min-height: 90vh;
     position: relative;
 }
 
 h1 {
     font-family: Garamond, serif;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     color: black;
+    text-shadow: 2px 2px 5px #ab7d00;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -35,28 +35,38 @@ h1 {
 p {
     font-size: 1rem;
     text-align: center;
-    margin: 10px 0;
-    padding: 0 20px;
+    margin: 20px 0;
+    color: black;
 }
 
-button {
+.message {
+    font-size: 1rem;
+    text-align: center;
+    margin: 20px 0;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.button {
     font-family: Lora, serif;
     cursor: pointer;
     padding: 12px 20px;
-    margin: 10px auto;
-    background: #013220;
+    margin: 30px auto;
+    background: black;
     border-radius: 5px;
     border: none;
-    color: white;
+    color: whitesmoke;
     font-size: 1rem;
-    width: 100%;
     max-width: 300px;
     align-self: center;
+    box-shadow: 2px 2px 5px #ab7d00;
+    transition: transform 0.2s ease;
 }
 
 button:hover {
     background: #ab7d00;
-    color: black;
+    box-shadow: 2px 2px 5px black;
+    transform: scale(0.9);
 }
 
 #hiddenMovieContent,
@@ -72,18 +82,35 @@ button:hover {
 #finishButton {
     display: none;
 }
+
+#startButton {
+    margin-top: 20px;
+}
+
 #resetButton {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    background: #ab7d00;
-    color: black;
+    top: 20px;
+    right: 25px;
+    background: transparent;
+    width: 40px;
     border: none;
-    width: 70px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    padding: 5px 0;
+    outline: none; 
+    box-shadow: none;
+    transition: transform 0.2s ease;
+
+    img {
+        width: 40px;
+    }
+
+    :hover {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        cursor: pointer;
+        transform: scale(0.9);
+        
+    }
 }
 
 #movie-list {
@@ -93,7 +120,9 @@ button:hover {
 }
 
 .movie-details {
-    border: 2px solid black;
+    background-color: rgb(245, 245, 245);
+    border: 2px solid #ab7d00;
+    box-shadow: 2px 2px 5px black;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -110,6 +139,7 @@ button:hover {
     object-fit: cover;
     margin: 10px;
     border-radius: 15px;
+    /* border: 2px solid black; */
 }
 
 .movie-title {
@@ -120,14 +150,14 @@ button:hover {
 
 .movie-description {
     font-size: 1rem;
-    color: #555;
+    color: black;
     margin-bottom: 10px;
 }
 
 .movie-runtime,
 .movie-cast {
     font-size: 0.9rem;
-    color: #777;
+    color: black;
     margin-bottom: 5px;
 }
 
@@ -141,6 +171,7 @@ button:hover {
     .box {
         width: 70%;
         padding: 30px;
+        min-height: 80vh;
     }
     h1 {
         font-size: 2rem;
@@ -159,6 +190,7 @@ button:hover {
 
 @media (min-width: 1024px) {
     .box {
+        min-height: 80vh;
         width: 60%;
         padding: 40px;
     }
