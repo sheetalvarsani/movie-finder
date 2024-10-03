@@ -61,7 +61,7 @@ const movies = [
     },
     {
       title: "Jumanji: Welcome To The Jungle",
-      plot: "The worst family game night",
+      plot: "The worst game night",
       runtime: 119,
       cast: ["Dwayne Johnson", "Karen Gillan", "Kevin Hart"],
       genre: ["adventure", "action", "comedy"],
@@ -83,7 +83,7 @@ const movies = [
       cast: ["Sandra Bullock", "Ryan Reynolds"],
       genre: ["comedy", "romance", "drama"],
       poster:
-        "https://cms.giggster.com/guide/directus/assets/8141e0f8-2334-4e17-9444-11b032174654?fit=cover&width=400&quality=80"
+        "https://resizing.flixster.com/RNp2DpwJESA0qRiCJUskEnVCtqk=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p192250_p_v8_ap.jpg"
     },
     {
       title: "The Girl On The Train",
@@ -151,7 +151,7 @@ const movies = [
         if (movie.genre.includes(chosenGenre)) {
             foundMovies = true; // Set the flag to true since at least one movie was found
             document.getElementById("genreResults").innerHTML =
-                "Here are your movie results for " +
+                "Movie results for " +
                 chosenGenre.toUpperCase() +
                 " :<br><br>";
 
