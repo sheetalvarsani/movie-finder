@@ -46,7 +46,6 @@ p {
 
 .message,
 #genreButton,
-#finalMessage,
 #hiddenMovieContent {
     display: none;
 }

@@ -4,7 +4,7 @@ const movies = [
         plot: "Group spends 9 hours returning jewellery",
         runtime: 558,
         cast: ["Elijah Wood", "Ian McKellan", "Orlando Bloom"],
-        genre: ["adventure", "action", "drama"],
+        genre: ["adventure", "action"],
         poster: "https://www.slashfilm.com/img/gallery/get-your-first-look-at-the-proto-hobbits-the-harfoots-in-the-lord-of-the-rings-the-rings-of-power/intro-1654525596.jpg",
     },
     {
@@ -61,7 +61,7 @@ const movies = [
         plot: "A family's first Airbnb experience goes very wrong",
         runtime: 146,
         cast: ["Jack Nicholson", "Shelley Duvall"],
-        genre: ["horror", "drama"],
+        genre: ["horror"],
         poster: "https://flxt.tmsimg.com/assets/p40_v_v12_sk.jpg",
     },
     {
@@ -69,7 +69,7 @@ const movies = [
         plot: "Boss falls in love with their secretary",
         runtime: 108,
         cast: ["Sandra Bullock", "Ryan Reynolds"],
-        genre: ["comedy", "romance", "drama"],
+        genre: ["comedy", "romance"],
         poster: "https://resizing.flixster.com/RNp2DpwJESA0qRiCJUskEnVCtqk=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p192250_p_v8_ap.jpg",
     },
     {

@@ -28,7 +28,7 @@
                 <button
                     class="button"
                     id="startButton"
-                    onclick="greeting()"
+                    onclick="displayGreeting()"
                     aria-label="Start planning movie night"
                 >
                     Let's begin!
@@ -70,6 +70,7 @@
                     <button
                         class="button"
                         id="finishButton"
+                        onclick="finish()"
                         aria-label="Finish movie night planning"
                     >
                         Click to Finish
@@ -78,10 +79,9 @@
             </div>
 
             <footer>
-                <p id="finalMessage">Enjoy your movie night!</p>
                 <button
                     id="resetButton"
-                    onclick="reset()"
+                    onclick="resetUI()"
                     aria-label="Reset the planner"
                 >
                     <img src="images/reset.png" alt="Reset" />
