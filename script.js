@@ -127,7 +127,7 @@ function showNoMoviesFound(chosenGenre) {
 
 function finish() {
     // Set the h1 text to "Enjoy Movie Night"
-    document.querySelector('h1').innerHTML = "🍿 Enjoy Movie Night! 🍿";
+    document.querySelector('h1').innerHTML = "🍿 Enjoy 🍿 <br> Movie Night! ";
 
     // Hide all other elements
     const elementsToHide = [
@@ -174,6 +174,8 @@ function resetValues() {
     document.getElementById("greet").innerHTML = "";
     document.getElementById("genreResults").innerHTML = "";
     document.getElementById("movie-list").innerHTML = ""; // Clear movie list
+
+    document.querySelector('h1').innerHTML = "🍿 Movie Night 🍿 <br /> Planner";
 
     const messages = document.getElementsByClassName("message");
     for (const message of messages) {
