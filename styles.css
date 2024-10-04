@@ -9,6 +9,11 @@ body {
     font-family: "Lora", serif;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
 .box {
     display: flex;
     flex-direction: column;
