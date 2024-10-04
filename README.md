@@ -36,7 +36,7 @@ git clone https://github.com/sheetalvarsani/movie-night-planner.git
 ### Navigate to the Directory
 
 ```bash
-cd tic-tac-toe.git/srccd movie-night-planner
+cd movie-night-planner
 ```
 
 <br>
