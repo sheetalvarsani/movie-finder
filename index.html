@@ -3,41 +3,55 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Plan your perfect movie night with personalized recommendations based on your favorite genres."
+        />
         <title>Movie Night Planner</title>
+
+        <link rel="icon" href="./images/favicon.png" type="image/x-icon" /> 
+        <!-- <a href="https://www.flaticon.com/free-icons/popcorn" title="popcorn icons">Popcorn icons created by Freepik - Flaticon</a> -->
         <link
             href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles.css" />
-        <!-- Link to external CSS file -->
     </head>
 
     <body>
-        <section class="box">
+        <main class="box">
             <h1>
                 🍿 Movie Night 🍿 <br />
                 Planner
             </h1>
+            <nav>
+                <button
+                    class="button"
+                    id="startButton"
+                    onclick="greeting()"
+                    aria-label="Start planning movie night"
+                >
+                    Let's begin!
+                </button>
+                <p class="message" id="greet"></p>
 
-            <!-- Step 1: Let's begin -->
-            <button class="button" id="startButton" onclick="greeting()">
-                Let's begin!
-            </button>
-            <p class="message" id="greet"></p>
+                <button
+                    class="button"
+                    id="genreButton"
+                    onclick="chooseGenre()"
+                    aria-label="Choose movie genre"
+                >
+                    Choose Genre
+                </button>
+            </nav>
 
-            <!-- Step 2: Choose Genre -->
-            <button class="button" id="genreButton" onclick="chooseGenre()">
-                Choose Genre
-            </button>
-
-            <!-- Section for Genre and Movie List (Hidden initially) -->
             <div id="hiddenMovieContent">
                 <p class="message" id="genreResults"></p>
                 <section id="movie-list">
                     <div class="movie-details">
                         <img
                             src="poster.jpg"
-                            alt="Movie Poster"
+                            alt="A poster of the movie titled 'Movie Title'"
                             class="movie-poster"
                         />
                         <p class="movie-title">Movie Title</p>
@@ -49,21 +63,32 @@
                         class="button"
                         id="chooseAgainButton"
                         onclick="chooseGenre()"
+                        aria-label="Choose another genre"
                     >
                         Choose Again
                     </button>
-                    <button class="button" id="finishButton">
+                    <button
+                        class="button"
+                        id="finishButton"
+                        aria-label="Finish movie night planning"
+                    >
                         Click to Finish
                     </button>
                 </section>
             </div>
 
-            <!-- Reset -->
-            <p id="finalMessage">Enjoy your movie night!</p>
-            <button id="resetButton" onclick="reset()">
-                <img src="images/reset.png" alt="Reset" />
-            </button>
-        </section>
+            <footer>
+                <p id="finalMessage">Enjoy your movie night!</p>
+                <button
+                    id="resetButton"
+                    onclick="reset()"
+                    aria-label="Reset the planner"
+                >
+                    <img src="images/reset.png" alt="Reset" />
+                </button>
+            </footer>
+        </main>
+
         <script src="movies.js"></script>
         <script src="script.js"></script>
     </body>

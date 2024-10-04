@@ -9,18 +9,9 @@ body {
     font-family: "Lora", serif;
 }
 
-.box {
+nav {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    /* padding: 0 50px; */
-    margin: 2rem auto;
-    background: #711324;
-    border-radius: 10px;
-    position: relative;
-    min-height: 80vh;
 }
 
 h1 {
@@ -29,8 +20,7 @@ h1 {
     color: black;
     text-shadow: 2px 2px 5px #ab7d00;
     text-align: center;
-    margin-bottom: 20px;
-    padding-top: 3rem;
+    margin: 5rem 0 20px;
 }
 
 p {
@@ -41,15 +31,35 @@ p {
     line-height: 2;
 }
 
-.message {
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 2rem auto;
+    background: #711324;
+    border-radius: 10px;
+    position: relative;
+    min-height: 80vh;
+}
+
+.message,
+#genreButton,
+#finalMessage,
+#hiddenMovieContent {
     display: none;
+}
+
+.message {
     font-size: 1rem;
     text-align: center;
     margin: 20px 0;
     color: whitesmoke;
 }
 
-.button {
+.button,
+#resetButton {
     font-family: Lora, serif;
     cursor: pointer;
     padding: 12px 20px;
@@ -65,60 +75,32 @@ p {
     transition: transform 0.2s ease;
 }
 
-button:hover {
+.button:hover {
     background: #ab7d00;
     box-shadow: 2px 2px 5px black;
     transform: scale(0.9);
 }
 
-#hiddenMovieContent {
-    display: none;
-}
-
-#genreButton {
-    display: none;
-}
-
-#startButton {
-    margin-top: 20px;
-}
-
 #resetButton {
     position: absolute;
-    top: 20px;
-    right: 25px;
+    top: 5px;
+    right: 20px;
     background: transparent;
     width: 40px;
     border: none;
     outline: none;
     box-shadow: none;
-    transition: transform 0.2s ease;
 
     img {
-        width: 40px;
-    }
-
-    :hover {
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        outline: none;
-        cursor: pointer;
-        transform: scale(0.9);
+        width: 30px;
     }
 }
 
-#chooseAgainButton {
-    margin-top: 20px;
+#resetButton:hover {
+    cursor: pointer;
+    transform: scale(0.9);
 }
 
-#finishButton {
-    margin-bottom: 30px;
-}
-
-#finalMessage {
-    display: none;
-}
 #movie-list {
     display: flex;
     flex-wrap: wrap;
@@ -145,7 +127,6 @@ button:hover {
     object-fit: cover;
     margin: 10px;
     border-radius: 15px;
-    /* border: 2px solid black; */
 }
 
 .movie-title {
@@ -165,9 +146,7 @@ button:hover {
 .movie-runtime,
 .movie-cast {
     font-size: 0.8rem;
-    color: black;
-    margin-bottom: 5px;
-    padding: 0 40px;
+    line-height: 1rem;;
 }
 
 .movie-buttons {
@@ -178,18 +157,14 @@ button:hover {
     margin-bottom: 2rem;
 }
 
-
-
-
 @media (min-width: 768px) {
     .box {
         width: 70%;
-        min-height: 80vh;
     }
     h1 {
         font-size: 2.5rem;
     }
-    button {
+    .button {
         max-width: 250px;
     }
     .movie-details {
@@ -197,35 +172,25 @@ button:hover {
         margin: 10px;
     }
     .movie-buttons {
-        display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 2rem;
-        margin: 3rem;
-        margin-bottom: 4rem;
+        margin: 3rem 0 4rem;
     }
-    
     #chooseAgainButton {
         display: none;
-        margin: 0;
-    }
-    
-    #finishButton {
-        margin: 0;
     }
 }
 
 @media (min-width: 1024px) {
     .box {
         width: 60%;
-        min-height: 80vh;
     }
-
     h1 {
         font-size: 3rem;
         margin-bottom: 2rem;
     }
-    button {
+    .button {
         font-size: 1.1rem;
         max-width: 200px;
     }
@@ -234,20 +199,11 @@ button:hover {
         margin: 15px;
     }
     .movie-buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
         gap: 2rem;
-        margin: 3rem;
-        margin-bottom: 5rem;
+        margin: 3rem 0 5rem;
     }
-    
-    #chooseAgainButton {
-        margin: 0;
-        display: none;
-    }
-    
-    #finishButton {
-        margin: 0;
+
+    .movie-title {
+        padding: 0 20px;
     }
 }
