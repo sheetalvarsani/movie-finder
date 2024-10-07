@@ -1,7 +1,6 @@
 let userName = "";
 let movieResults = [];
 
-// Capitalises the first letter of the name and makes the rest lowercase
 function capitaliseName(name) {
     if (!name) return "";
     return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
@@ -13,12 +12,12 @@ function displayGreeting() {
     userName = capitaliseName(userName);
 
     const greetElement = document.getElementById("greet");
-    
+
     if (!userName) {
         greetElement.innerHTML = "Please enter a valid name!";
         return;
-    } 
-    
+    }
+
     greetElement.innerHTML = `Hello <span class="user-name">${userName}</span>! Let's plan your Movie Night!`;
     updateUIForGreeting();
 }
@@ -37,15 +36,18 @@ function updateUIForGreeting() {
 
 // Chooses the genre and displays corresponding movies
 function chooseGenre() {
-    const chosenGenre = prompt("What movie genre are you feeling?").toLowerCase();
+    const chosenGenre = prompt(
+        "What movie genre are you feeling?"
+    ).toLowerCase();
     const movieList = document.getElementById("movie-list");
-    movieList.innerHTML = "";  // Clear previous movie listings
+    movieList.innerHTML = ""; // Clear previous movie listings
 
     document.getElementById("hiddenMovieContent").style.display = "block";
     document.getElementById("genreButton").style.display = "none";
 
-    document.getElementById("genreResults").innerHTML =
-        `<span class="user-name">${userName}</span>'s results for ${chosenGenre.toUpperCase()} movies:<br><br>`;
+    document.getElementById(
+        "genreResults"
+    ).innerHTML = `<span class="user-name">${userName}</span>'s results for ${chosenGenre.toUpperCase()} movies:<br><br>`;
 
     displayMovies(chosenGenre);
 }
@@ -53,6 +55,7 @@ function chooseGenre() {
 // Displays movies based on the selected genre
 function displayMovies(chosenGenre) {
     const movieList = document.getElementById("movie-list");
+    movieList.style.display = "flex";
     let foundMovies = false;
 
     // Clear previous movie results before fetching new ones
@@ -78,27 +81,37 @@ function createMovieElement(movie) {
     const movieContainer = document.createElement("div");
     movieContainer.className = "movie-details";
 
-    movieContainer.appendChild(createElement("img", { 
-        className: "movie-poster", 
-        src: movie.poster, 
-        alt: `${movie.title} Poster` 
-    }));
-    movieContainer.appendChild(createElement("p", { 
-        className: "movie-title", 
-        textContent: movie.title 
-    }));
-    movieContainer.appendChild(createElement("p", { 
-        className: "movie-description", 
-        textContent: `Summary: ${movie.plot}` 
-    }));
-    movieContainer.appendChild(createElement("p", { 
-        className: "movie-runtime", 
-        textContent: `Runtime: ${movie.runtime} minutes` 
-    }));
-    movieContainer.appendChild(createElement("p", { 
-        className: "movie-cast", 
-        textContent: `Cast: ${movie.cast.join(", ")}` 
-    }));
+    movieContainer.appendChild(
+        createElement("img", {
+            className: "movie-poster",
+            src: movie.poster,
+            alt: `${movie.title} Poster`,
+        })
+    );
+    movieContainer.appendChild(
+        createElement("p", {
+            className: "movie-title",
+            textContent: movie.title,
+        })
+    );
+    movieContainer.appendChild(
+        createElement("p", {
+            className: "movie-description",
+            textContent: `Summary: ${movie.plot}`,
+        })
+    );
+    movieContainer.appendChild(
+        createElement("p", {
+            className: "movie-runtime",
+            textContent: `Runtime: ${movie.runtime} minutes`,
+        })
+    );
+    movieContainer.appendChild(
+        createElement("p", {
+            className: "movie-cast",
+            textContent: `Cast: ${movie.cast.join(", ")}`,
+        })
+    );
 
     return movieContainer;
 }
@@ -119,32 +132,31 @@ function showResultsUI() {
 
 // Shows message when no movies are found
 function showNoMoviesFound(chosenGenre) {
-    document.getElementById("genreResults").innerHTML =
-        `No movies found for ${chosenGenre.toUpperCase()}. Please see options below:<br><br>Adventure | Action | Drama | Fantasy | Romance | Thriller | Horror | Musical | Comedy | Mystery | Animation`;
+    document.getElementById(
+        "genreResults"
+    ).innerHTML = `No movies found for ${chosenGenre.toUpperCase()}. Please see options below:<br><br>Adventure | Action | Drama | Fantasy | Romance | Thriller | Horror | Musical | Comedy | Mystery | Animation`;
     document.getElementById("genreButton").style.display = "none";
     document.getElementById("chooseAgainButton").style.display = "block";
 }
 
 function finish() {
-    // Set the h1 text to "Enjoy Movie Night"
-    document.querySelector('h1').innerHTML = "🍿 Enjoy 🍿 <br> Movie Night! ";
+    document.querySelector("h1").innerHTML = "🍿 Enjoy 🍿 <br> Movie Night! ";
 
-    // Hide all other elements
     const elementsToHide = [
-        "greet", 
-        "hiddenMovieContent", 
-        "chooseAgainButton", 
-        "finishButton", 
-        "genreResults", 
+        "greet",
+        "hiddenMovieContent",
+        "chooseAgainButton",
+        "finishButton",
+        "genreResults",
         "movie-list",
         "startButton",
-        "genreButton"
+        "genreButton",
     ];
-    
-    elementsToHide.forEach(id => {
+
+    elementsToHide.forEach((id) => {
         const element = document.getElementById(id);
         if (element) {
-            element.style.display = "none"; // Hide the element
+            element.style.display = "none";
         }
     });
 }
@@ -152,15 +164,14 @@ function finish() {
 // Resets the user interface to the initial state
 function resetUI() {
     const elementsToHide = [
-        "greet", 
-        "hiddenMovieContent", 
-        "chooseAgainButton", 
-        "finishButton", 
-        "genreResults", 
-        "movie-list"
+        "greet",
+        "hiddenMovieContent",
+        "chooseAgainButton",
+        "finishButton",
+        "genreResults",
     ];
-    
-    elementsToHide.forEach(id => {
+
+    elementsToHide.forEach((id) => {
         document.getElementById(id).style.display = "none";
     });
 
@@ -175,7 +186,7 @@ function resetValues() {
     document.getElementById("genreResults").innerHTML = "";
     document.getElementById("movie-list").innerHTML = ""; // Clear movie list
 
-    document.querySelector('h1').innerHTML = "🍿 Movie Night 🍿 <br /> Planner";
+    document.querySelector("h1").innerHTML = "🍿 Movie Night 🍿 <br /> Planner";
 
     const messages = document.getElementsByClassName("message");
     for (const message of messages) {
@@ -185,6 +196,5 @@ function resetValues() {
     userName = "";
 }
 
-// Event listeners for buttons
-document.getElementById("resetButton").addEventListener("click", resetUI); // Ensure resetUI is used
+document.getElementById("resetButton").addEventListener("click", resetUI);
 document.getElementById("finishButton").addEventListener("click", finish);
